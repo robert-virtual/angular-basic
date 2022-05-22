@@ -1,0 +1,70 @@
+<h1>Hola Mundo Angular</h1>
+<h2>
+  Vincular el valor de una variable(jasvacripts | typescript) a la vista(html)
+</h2>
+<p>{{ variable }}</p>
+<p>Contador:{{ contador }}</p>
+<hr />
+<h2>Emitor un evento</h2>
+<button (click)="incrementar()">Incrementar contador</button>
+<hr />
+<h2>Vincular valores de entrada(input) a una variable: {{ variable }}</h2>
+<p>Es NEcesario agregar <b>FormsModule </b> a los imports de AppModule</p>
+<input type="text" [(ngModel)]="variable" />
+<hr />
+<h2>Mostrar un valor de forma condicional</h2>
+<p *ngIf="verParrafo">
+  Este texto se mira de forma condicional usando la directiva <b>*ngIf</b>
+</p>
+<button (click)="verParrafo = !verParrafo">alternar visibilidad</button>
+<hr />
+<h2>Mostar una lista de datos</h2>
+<ol>
+  <li *ngFor="let elemento of lista">
+    <p>{{ elemento.title }}</p>
+    <p>{{ elemento.description }}</p>
+  </li>
+</ol>
+<hr />
+<h2>Crear un componente</h2>
+<p>Ejecutamos el siguiente comando:</p>
+<p><b>ng generate component nombre_del_componente</b></p>
+<hr />
+<h2>Crear Navegacion</h2>
+<ol>
+  <li>
+    Crear un modulo para la navegacion: <b>ng generate module AppRouting</b>
+  </li>
+  <li>Removemos commonmodule de los imports</li>
+  <li>Agregamos RouterModule imports e exports</li>
+  <li>
+    Creamos una lista de rutas(const routes:Routes =
+    [[path:"inicio",component:InicioComponent]]) cada ruta es un objecto con un
+    path y un component
+  </li>
+  <li>Los Path no deben llevar /</li>
+  <li>Agregamos Router Module.forRoot(routes) a los imports</li>
+  <li>
+    Agregamos Nuestro modulo de navegacion a los iports de el AppModule (despues
+    de BrowserModule)
+  </li>
+  <li>Agregamos una navegacion html a nuestra applicaciones (appComponent)</li>
+  <li>En lugar de en href indicamos la ruta en la propiedad routerlink</li>
+  <li>Agregamos el componente router-outlet</li>
+  <li>
+    Asignamos una ruta de redireccion de / a la ruta que queremos sea la ruta
+    inicial(en app-routing.module) y agregamos la propiedad pathMatch:"full"
+    ahora al visitar la rura principal (/) automaticamente nos redirecciona la
+    ruta /inicio
+  </li>
+  <li>
+    Mostrar la Ruta Actual creamos una clase "active" que cambie el color de la
+    etiqueta a que corresponde a la ruta actual(aun no veremos ningun cambio)
+  </li>
+  <li>
+    Agregamos la propiedad rounterlinkActive a las etiquetsa a de nuestra
+    navegacion y le asignamos el nombre de la clase que queremos que se aplique
+    cuando esa ruta sea la ruta actual
+  </li>
+</ol>
+<h2>Nos vemos en el proximo</h2>

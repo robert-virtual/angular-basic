@@ -1,0 +1,16 @@
+nav {
+  display: flex;
+  gap: 1rem;
+  box-shadow: 0 0 6px gray;
+  padding: 1rem;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+.active {
+  color: orange;
+}
+main {
+  padding: 1rem;
+}
